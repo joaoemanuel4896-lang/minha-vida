@@ -1,1 +1,358 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Para Synara ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+background:#050505;
+color:white;
+overflow-x:hidden;
+}
+
+body::before{
+content:'';
+position:fixed;
+width:100%;
+height:100%;
+background:
+radial-gradient(circle at top,#ff008080,transparent 40%);
+z-index:-2;
+}
+
+canvas{
+position:fixed;
+top:0;
+left:0;
+z-index:-1;
+}
+
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+}
+
+.hero h1{
+font-family:'Great Vibes',cursive;
+font-size:6rem;
+color:#ff4da6;
+text-shadow:0 0 25px #ff4da6;
+}
+
+.hero p{
+font-size:1.2rem;
+margin-top:15px;
+color:#ddd;
+}
+
+.contador{
+display:flex;
+gap:15px;
+margin-top:40px;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.box{
+background:rgba(255,255,255,.05);
+backdrop-filter:blur(10px);
+padding:20px;
+border-radius:20px;
+width:120px;
+border:1px solid #ff4da655;
+box-shadow:0 0 20px #ff4da622;
+}
+
+.box span{
+display:block;
+font-size:2rem;
+font-weight:bold;
+color:#ff4da6;
+}
+
+.section{
+padding:80px 10%;
+}
+
+.titulo{
+text-align:center;
+font-family:'Great Vibes';
+font-size:4rem;
+color:#ff4da6;
+margin-bottom:50px;
+}
+
+.galeria{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+}
+
+.card{
+background:#111;
+border-radius:20px;
+overflow:hidden;
+transition:.4s;
+border:1px solid #ff4da633;
+}
+
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 0 30px #ff4da655;
+}
+
+.card img{
+width:100%;
+height:450px;
+object-fit:cover;
+}
+
+.card p{
+padding:20px;
+text-align:center;
+color:#ff9acb;
+}
+
+.carta{
+max-width:900px;
+margin:auto;
+background:#111;
+padding:40px;
+border-radius:25px;
+line-height:2;
+font-size:1.1rem;
+border:1px solid #ff4da633;
+box-shadow:0 0 25px #ff4da622;
+}
+
+footer{
+padding:50px;
+text-align:center;
+color:#ff7abf;
+}
+
+.music{
+position:fixed;
+top:20px;
+right:20px;
+background:#ff4da6;
+border:none;
+padding:15px 25px;
+border-radius:50px;
+cursor:pointer;
+color:white;
+font-weight:bold;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:4rem;
+}
+
+.titulo{
+font-size:3rem;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<canvas id="canvas"></canvas>
+
+<button class="music" onclick="abrirMusica()">
+🎵 Nossa Música
+</button>
+
+<section class="hero">
+
+<h1>Para minha Synara ❤️</h1>
+
+<p>
+Desde que você entrou na minha vida,
+tudo ficou mais bonito.
+</p>
+
+<div class="contador">
+
+<div class="box">
+<span id="dias">0</span>
+Dias
+</div>
+
+<div class="box">
+<span id="horas">0</span>
+Horas
+</div>
+
+<div class="box">
+<span id="minutos">0</span>
+Minutos
+</div>
+
+<div class="box">
+<span id="segundos">0</span>
+Segundos
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2 class="titulo">Minha Princesa 👑</h2>
+
+<div class="galeria">
+
+<div class="card">
+<img src="foto1.jpg">
+<p>Você é linda em todos os momentos ❤️</p>
+</div>
+
+<div class="card">
+<img src="foto2.jpg">
+<p>Seu sorriso ilumina meus dias ✨</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2 class="titulo">Uma Carta Para Você 💌</h2>
+
+<div class="carta">
+
+Boa noite, amor da minha vida. ❤️
+<br><br>
+
+Quero que você saiba que eu te amo muito.
+Desde o primeiro momento em que te vi,
+senti algo diferente.
+
+Você é uma menina linda, especial,
+gentil e dona de um sorriso que consegue
+melhorar qualquer dia ruim.
+
+Obrigado por estar comigo,
+por me aturar até quando eu faço você passar
+raiva kkkkk ❤️
+
+Cada conversa, cada sorriso e cada momento
+ao seu lado faz eu gostar ainda mais de você.
+
+Eu te amo mais do que consigo explicar
+em palavras e quero continuar construindo
+momentos incríveis ao seu lado.
+
+Você é uma das melhores coisas que já
+aconteceram na minha vida.
+
+❤️ Eu te amo, Synara ❤️
+
+</div>
+
+</section>
+
+<footer>
+
+Feito com amor por João ❤️
+
+</footer>
+
+<script>
+
+const inicio = new Date("2026-06-01T00:00:00");
+
+function atualizar(){
+
+const agora = new Date();
+const diferenca = agora - inicio;
+
+const dias = Math.floor(diferenca/1000/60/60/24);
+const horas = Math.floor(diferenca/1000/60/60)%24;
+const minutos = Math.floor(diferenca/1000/60)%60;
+const segundos = Math.floor(diferenca/1000)%60;
+
+document.getElementById("dias").innerText=dias;
+document.getElementById("horas").innerText=horas;
+document.getElementById("minutos").innerText=minutos;
+document.getElementById("segundos").innerText=segundos;
+
+}
+
+setInterval(atualizar,1000);
+atualizar();
+
+function abrirMusica(){
+window.open("https://www.youtube.com/results?search_query=tudo+que+voce+quiser+luan+santana");
+}
+
+const canvas=document.getElementById("canvas");
+const ctx=canvas.getContext("2d");
+
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+
+let hearts=[];
+
+for(let i=0;i<50;i++){
+hearts.push({
+x:Math.random()*canvas.width,
+y:Math.random()*canvas.height,
+size:Math.random()*20+10,
+speed:Math.random()*1+0.5
+});
+}
+
+function animate(){
+
+ctx.clearRect(0,0,canvas.width,canvas.height);
+
+hearts.forEach(h=>{
+
+ctx.font=h.size+"px Arial";
+ctx.fillText("❤️",h.x,h.y);
+
+h.y+=h.speed;
+
+if(h.y>canvas.height){
+h.y=-20;
+h.x=Math.random()*canvas.width;
+}
+
+});
+
+requestAnimationFrame(animate);
+
+}
+
+animate();
+
+</script>
+
+</body>
+</html>
