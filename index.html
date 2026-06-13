@@ -311,8 +311,9 @@ document.getElementById("segundos").innerText=segundos;
 setInterval(atualizar,1000);
 atualizar();
 
-function abrirMusica(){
-window.open("https://www.youtube.com/results?search_query=tudo+que+voce+quiser+luan+santana");
+function tocarMusica(){
+const musica = document.getElementById("musica");
+musica.play();
 }
 
 const canvas=document.getElementById("canvas");
