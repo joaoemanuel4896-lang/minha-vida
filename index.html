@@ -338,6 +338,39 @@ requestAnimationFrame(animate);
 animate();
 
 </script>
+<script src="https://cdn.jsdelivr.net/npm/fireworks-js@2/dist/index.umd.js"></script>
 
+<script>
+const container = document.body;
+
+const fireworks = new Fireworks.default(container, {
+  autoresize: true,
+  opacity: 0.5,
+  acceleration: 1.03,
+  friction: 0.98,
+  gravity: 1.2,
+  particles: 80,
+  traceLength: 4,
+  traceSpeed: 10,
+  explosion: 6,
+  intensity: 20,
+  flickering: 50,
+  lineStyle: "round",
+  hue: {
+    min: 0,
+    max: 360
+  },
+  delay: {
+    min: 20,
+    max: 40
+  },
+  rocketsPoint: {
+    min: 20,
+    max: 80
+  }
+});
+
+fireworks.start();
+</script>
 </body>
 </html>
